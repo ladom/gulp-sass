@@ -1,6 +1,6 @@
 'use strict';
 
-var chalk = require('chalk');
+var colors = require('ansi-colors');
 var PluginError = require('plugin-error');
 var replaceExtension = require('replace-ext');
 var stripAnsi = require('strip-ansi');
@@ -125,7 +125,7 @@ var gulpSass = function gulpSass(options, sync) {
       filePath = filePath ? filePath : file.path;
       relativePath = path.relative(process.cwd(), filePath);
 
-      message += chalk.underline(relativePath) + '\n';
+      message += colors.underline(relativePath) + '\n';
       message += error.formatted;
 
       error.messageFormatted = message;
